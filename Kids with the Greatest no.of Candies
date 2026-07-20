@@ -1,0 +1,17 @@
+class Solution {
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        int len = candies.length;
+        List<Boolean> result = new ArrayList<>(); 
+        for(int i = 0; i < len; i++) {
+            int sum = candies[i] + extraCandies;
+            boolean isLargest = true;
+            for(int k = 0; k < len; k++) {
+                if(sum < candies[k]) {
+                    isLargest = false;
+                }
+            }
+            result.add(isLargest);
+        }
+        return result;
+    }
+}
